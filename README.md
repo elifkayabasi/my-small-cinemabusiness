@@ -1,0 +1,3 @@
+CinemaSystem, Java diliyle yazilmis konsol tabanli bir sinema kayit sistemidir. Kullanicidan film ve musteri bilgileri alarak bilet islemi yapilmasina olanak saglar. Uygulama icerisinde film ekleme, musteri kaydi alma, musteriyle film eslestirerek bilet olusturma, ve bu kayitlari listeleme gibi islemler yapilabilir.
+
+Projede derste gordugumuz konular kullanilmistir. Scanner ile kullanicidan veri alinmistir. Film ve musteri bilgileri dizilerle tutulmustur. Uygulamada if-else, switch, for dongusu gibi temel kontrol yapiilari kullanilmistir. Ayrica islem adimlari metotlar araciligiyla ayrilmistir. Kullanic arayuzu tamamen konsol uzerinden calismaktadir.
