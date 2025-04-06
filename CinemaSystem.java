@@ -43,10 +43,10 @@ public class CinemaSystem {
                     biletleriGoster();
                     break;
                 case 0:
-                    System.out.println("Sistemden çıkılıyor...");
+                    System.out.println("Sistemden cikiliyor...");
                     break;
                 default:
-                    System.out.println("Geçersiz seçim, tekrar deneyin.");
+                    System.out.println("Gecersiz secim, tekrar deneyin.");
             }
         } while (secim != 0);
 
@@ -56,13 +56,13 @@ public class CinemaSystem {
     static void anaMenuGoster() {
         System.out.println("\n--- Elif'in Sinema Bilet Sistemi ---");
         System.out.println("1. Film Ekle");
-        System.out.println("2. Müşteri Ekle");
+        System.out.println("2. Musteri Ekle");
         System.out.println("3. Bilet Ekle");
         System.out.println("4. Filmleri Listele");
-        System.out.println("5. Müşterileri Listele");
+        System.out.println("5. Musterileri Listele");
         System.out.println("6. Biletleri Listele");
-        System.out.println("0. Çıkış");
-        System.out.print("Seçiminiz: ");
+        System.out.println("0. Cikis");
+        System.out.print("Seciminiz: ");
     }
 
     static void filmEklemeIslemi() {
@@ -72,14 +72,14 @@ public class CinemaSystem {
         }
 
         // film bilgileri alma
-        System.out.print("Film adı: ");
+        System.out.print("Film adi: ");
         filmAdlari[toplamFilm] = scanner.nextLine();
 
-        System.out.print("Süre (dakika): ");
+        System.out.print("Sure (dakika): ");
         filmSureleri[toplamFilm] = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.print("Tür: ");
+        System.out.print("Tur: ");
         filmTurleri[toplamFilm] = scanner.nextLine();
 
         toplamFilm++;
@@ -87,11 +87,11 @@ public class CinemaSystem {
 
     static void musteriKaydiAl() {
         if (toplamMusteri >= 20) {
-            System.out.println("Müşteri kapasitesi doldu.");
+            System.out.println("Musteri kapasitesi doldu.");
             return;
         }
 
-        System.out.print("Müşteri adı: ");
+        System.out.print("Musteri adi: ");
         musteriIsimleri[toplamMusteri] = scanner.nextLine();
 
         System.out.print("Email adresi: ");
@@ -103,38 +103,38 @@ public class CinemaSystem {
     static void biletKaydiYap() {
         // musteri ve film listeleri
         musterileriGoster();
-        System.out.print("Müşteri numarası (0-" + (toplamMusteri - 1) + "): ");
+        System.out.print("Musteri numarasi (0-" + (toplamMusteri - 1) + "): ");
         int mid = scanner.nextInt();
 
         filmleriGoster();
-        System.out.print("Film numarası (0-" + (toplamFilm - 1) + "): ");
+        System.out.print("Film numarasi (0-" + (toplamFilm - 1) + "): ");
         int fid = scanner.nextInt();
 
         // bilet kaydi
         if (mid < toplamMusteri && fid < toplamFilm) {
             biletKayitlari[mid][fid] = 1;
-            System.out.println("Bilet başarıyla kaydedildi.");
+            System.out.println("Bilet kaydedildi.");
         } else {
-            System.out.println("Hatalı seçim.");
+            System.out.println("Hatalı secim.");
         }
     }
 
     static void filmleriGoster() {
-        System.out.println("--- Mevcut Filmler ---");
+        System.out.println("--- Filmler ---");
         for (int i = 0; i < toplamFilm; i++) {
             System.out.println(i + " - " + filmAdlari[i] + " | Süre: " + filmSureleri[i] + " dk | Tür: " + filmTurleri[i]);
         }
     }
 
     static void musterileriGoster() {
-        System.out.println("--- Kayıtlı Müşteriler ---");
+        System.out.println("--- Musteriler ---");
         for (int i = 0; i < toplamMusteri; i++) {
             System.out.println(i + " - " + musteriIsimleri[i] + " | Email: " + musteriEpostalar[i]);
         }
     }
 
     static void biletleriGoster() {
-        System.out.println("--- Müşteri Biletleri ---");
+        System.out.println("--- Musteri Biletleri ---");
 
         for (int i = 0; i < toplamMusteri; i++) {
             System.out.print(musteriIsimleri[i] + ": ");
